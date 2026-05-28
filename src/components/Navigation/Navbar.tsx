@@ -63,14 +63,14 @@ export default function Navbar() {
           className="max-w-7xl mx-auto mt-4 flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500"
           style={{
             background: scrolled
-              ? isDark ? 'rgba(3,3,3,0.88)' : 'rgba(245,224,168,0.94)'
+              ? isDark ? 'rgba(3,3,3,0.88)' : 'rgba(250,250,248,0.92)'
               : 'transparent',
             backdropFilter: scrolled ? 'blur(20px)' : 'none',
             border: scrolled
-              ? isDark ? '1px solid rgba(255,255,255,0.07)' : '1px solid rgba(175,135,58,0.22)'
+              ? isDark ? '1px solid rgba(255,255,255,0.07)' : '1px solid rgba(0,0,0,0.09)'
               : '1px solid transparent',
             boxShadow: scrolled
-              ? isDark ? '0 8px 40px rgba(0,0,0,0.4)' : '0 8px 40px rgba(175,135,58,0.15)'
+              ? isDark ? '0 8px 40px rgba(0,0,0,0.4)' : '0 8px 40px rgba(0,0,0,0.08)'
               : 'none',
           }}
         >
@@ -111,7 +111,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 className="px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg"
-                style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(26,13,2,0.5)' }}
+                style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(17,17,17,0.55)' }}
               >
                 {link.label}
               </a>
@@ -125,9 +125,9 @@ export default function Navbar() {
               onClick={toggleTheme}
               className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium transition-all duration-300"
               style={{
-                background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(26,13,2,0.06)',
-                border: isDark ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(175,135,58,0.25)',
-                color: isDark ? 'rgba(255,255,255,0.45)' : 'rgba(26,13,2,0.5)',
+                background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)',
+                border: isDark ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(0,0,0,0.10)',
+                color: isDark ? 'rgba(255,255,255,0.45)' : 'rgba(17,17,17,0.55)',
               }}
               whileTap={{ scale: 0.94 }}
               aria-label="Toggle theme"
@@ -144,7 +144,7 @@ export default function Navbar() {
             </motion.button>
 
             <a href="#" className="text-sm font-medium transition-colors duration-200"
-              style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(26,13,2,0.5)' }}>
+              style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(17,17,17,0.55)' }}>
               Sign in
             </a>
             <a
@@ -164,21 +164,21 @@ export default function Navbar() {
             <span
               className="block w-5 h-0.5 transition-transform duration-300 origin-center"
               style={{
-                background: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(26,13,2,0.65)',
+                background: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(17,17,17,0.7)',
                 transform: menuOpen ? 'rotate(45deg) translateY(4px)' : 'none',
               }}
             />
             <span
               className="block w-5 h-0.5 transition-opacity duration-300"
               style={{
-                background: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(26,13,2,0.65)',
+                background: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(17,17,17,0.7)',
                 opacity: menuOpen ? 0 : 1,
               }}
             />
             <span
               className="block w-5 h-0.5 transition-transform duration-300 origin-center"
               style={{
-                background: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(26,13,2,0.65)',
+                background: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(17,17,17,0.7)',
                 transform: menuOpen ? 'rotate(-45deg) translateY(-4px)' : 'none',
               }}
             />
@@ -197,7 +197,7 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: 'easeOut' }}
             style={{
               backdropFilter: 'blur(40px)',
-              background: isDark ? 'rgba(3,3,3,0.98)' : 'rgba(245,224,168,0.98)',
+              background: isDark ? 'rgba(3,3,3,0.98)' : 'rgba(250,250,248,0.98)',
             }}
           >
             {navLinks.map((link, i) => (
@@ -205,7 +205,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 className="font-display text-3xl font-semibold transition-colors"
-                style={{ color: isDark ? 'rgba(255,255,255,0.8)' : 'rgba(26,13,2,0.75)' }}
+                style={{ color: isDark ? 'rgba(255,255,255,0.8)' : 'rgba(17,17,17,0.85)' }}
                 onClick={() => setMenuOpen(false)}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -218,9 +218,9 @@ export default function Navbar() {
               onClick={toggleTheme}
               className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300"
               style={{
-                background: isDark ? 'rgba(255,255,255,0.07)' : 'rgba(26,13,2,0.07)',
-                border: isDark ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(175,135,58,0.25)',
-                color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(26,13,2,0.5)',
+                background: isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.05)',
+                border: isDark ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(0,0,0,0.10)',
+                color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(17,17,17,0.55)',
               }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
