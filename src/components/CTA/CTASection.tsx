@@ -27,6 +27,7 @@ export default function CTASection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
+    window.location.href = `mailto:rajprabhuwork@gmail.com?subject=Free Audit Request from ${encodeURIComponent(email)}&body=Audit request from: ${encodeURIComponent(email)}`
     setSubmitted(true)
   }
 
