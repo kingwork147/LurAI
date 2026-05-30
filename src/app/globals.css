@@ -504,14 +504,14 @@ html.light .window-shadow {
 
 /* ── Buttons ── */
 html.light .btn-primary {
-  background: linear-gradient(180deg, #0077ed, #0071e3);
+  background: linear-gradient(180deg, #14D864, #00C853);
   box-shadow: none;
 }
 html.light .btn-primary::before {
-  background: linear-gradient(180deg, rgba(255,255,255,0.14), transparent 60%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), transparent 60%);
 }
 html.light .btn-primary:hover {
-  box-shadow: 0 4px 16px rgba(0,113,227,0.30), 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0,200,83,0.35), 0 2px 6px rgba(0,0,0,0.08);
 }
 
 html.light .btn-ghost {
