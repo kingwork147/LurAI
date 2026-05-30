@@ -7,21 +7,20 @@ type Theme = 'dark' | 'light'
 const ThemeContext = createContext<{
   theme: Theme
   toggleTheme: () => void
-}>({ theme: 'dark', toggleTheme: () => {} })
+}>({ theme: 'light', toggleTheme: () => {} })
 
 export function useTheme() {
   return useContext(ThemeContext)
 }
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark')
+  const [theme, setTheme] = useState<Theme>('light')
 
   useEffect(() => {
     const stored = localStorage.getItem('lur-theme') as Theme | null
-    if (stored === 'light') {
-      setTheme('light')
-      document.documentElement.classList.add('light')
-    }
+    const resolved = stored ?? 'light'
+    setTheme(resolved)
+    document.documentElement.classList.toggle('light', resolved === 'light')
   }, [])
 
   const toggleTheme = () => {
