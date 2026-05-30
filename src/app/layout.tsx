@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import SmoothScrollProvider from '@/providers/SmoothScrollProvider'
-import CustomCursor from '@/components/ui/CustomCursor'
 import ThemeProvider from '@/providers/ThemeProvider'
 
 const inter = Inter({
@@ -40,7 +39,6 @@ export default function RootLayout({
       <body className="bg-lur-black text-white antialiased overflow-x-hidden">
         <ThemeProvider>
           <SmoothScrollProvider>
-            <CustomCursor />
             {children}
           </SmoothScrollProvider>
         </ThemeProvider>
