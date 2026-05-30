@@ -26,8 +26,7 @@ function LogoItem({ logo }: { logo: typeof LOGOS[0] }) {
         style={{ background: logo.color, boxShadow: `0 0 6px ${logo.color}80` }}
       />
       <span
-        className="font-display font-bold text-sm md:text-base tracking-wider whitespace-nowrap transition-all duration-300"
-        style={{ color: 'rgba(255,255,255,0.22)' }}
+        className="logo-strip-name font-display font-bold text-sm md:text-base tracking-wider whitespace-nowrap transition-all duration-300"
       >
         {logo.name.toUpperCase()}
       </span>
