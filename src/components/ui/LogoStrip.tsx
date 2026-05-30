@@ -44,16 +44,6 @@ export default function LogoStrip() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/6 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/6 to-transparent" />
 
-      {/* Edge fades */}
-      <div
-        className="absolute left-0 top-0 bottom-0 w-28 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(90deg, #071A2E, transparent)' }}
-      />
-      <div
-        className="absolute right-0 top-0 bottom-0 w-28 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(-90deg, #071A2E, transparent)' }}
-      />
-
       {/* Label */}
       <div className="text-center mb-5">
         <span className="font-sans text-[10px] font-semibold tracking-[0.35em] uppercase text-white/18">

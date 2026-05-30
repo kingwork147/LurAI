@@ -18,11 +18,21 @@ interface Column {
   glyphs:   string[]
 }
 
-function pickColor(): string {
+function isLight() {
+  return document.documentElement.classList.contains('light')
+}
+
+function pickColor(light: boolean): string {
+  if (light) {
+    const r = Math.random()
+    if (r < 0.55) return '#00A843'
+    if (r < 0.85) return '#009935'
+    return '#00C853'
+  }
   const r = Math.random()
-  if (r < 0.55) return '#00C853'   // primary brand green
-  if (r < 0.85) return '#5EF38C'   // mint glow
-  return '#00D4FF'                  // cyan — sparingly
+  if (r < 0.55) return '#00C853'
+  if (r < 0.85) return '#5EF38C'
+  return '#00D4FF'
 }
 
 export default function NeuralCanvas() {
@@ -31,7 +41,6 @@ export default function NeuralCanvas() {
   useEffect(() => {
     const el = canvasRef.current
     if (!el) return
-    // Capture as non-null so nested functions don't need repeated checks
     const c   = el as HTMLCanvasElement
     const ctx = c.getContext('2d')!
     let raf: number
@@ -41,6 +50,7 @@ export default function NeuralCanvas() {
     const GAP = 24
 
     function init() {
+      const light = isLight()
       c.width  = c.offsetWidth
       c.height = c.offsetHeight
 
@@ -52,20 +62,25 @@ export default function NeuralCanvas() {
           y:        -Math.random() * c.height,
           speed:    0.8 + Math.random() * 1.6,
           trailLen,
-          color:    pickColor(),
+          color:    pickColor(light),
           glyphs:   Array.from({ length: trailLen + 2 }, randChar),
         }
       })
 
-      ctx.fillStyle = '#030303'
+      ctx.fillStyle = light ? '#ffffff' : '#030303'
       ctx.fillRect(0, 0, c.width, c.height)
     }
 
     init()
     window.addEventListener('resize', init)
 
+    // Re-init when light/dark class toggles
+    const observer = new MutationObserver(() => init())
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+
     function draw() {
-      ctx.fillStyle = 'rgba(3,3,3,0.12)'
+      const light = isLight()
+      ctx.fillStyle = light ? 'rgba(255,255,255,0.14)' : 'rgba(3,3,3,0.12)'
       ctx.fillRect(0, 0, c.width, c.height)
 
       ctx.font      = `${FS}px "SF Mono","Fira Code","Cascadia Code",monospace`
@@ -88,7 +103,7 @@ export default function NeuralCanvas() {
           ctx.globalAlpha = 1
           ctx.shadowColor = col.color
           ctx.shadowBlur  = 10
-          ctx.fillStyle   = '#ffffff'
+          ctx.fillStyle   = light ? '#1d1d1f' : '#ffffff'
           col.glyphs[0]   = randChar()
           ctx.fillText(col.glyphs[0], col.x, col.y)
           ctx.shadowBlur  = 0
@@ -100,7 +115,7 @@ export default function NeuralCanvas() {
           col.y        = -(col.trailLen * FS + Math.random() * 200)
           col.speed    = 0.8 + Math.random() * 1.6
           col.trailLen = 12 + Math.floor(Math.random() * 16)
-          col.color    = pickColor()
+          col.color    = pickColor(light)
           col.glyphs   = Array.from({ length: col.trailLen + 2 }, randChar)
         }
       }
@@ -114,6 +129,7 @@ export default function NeuralCanvas() {
     return () => {
       cancelAnimationFrame(raf)
       window.removeEventListener('resize', init)
+      observer.disconnect()
     }
   }, [])
 

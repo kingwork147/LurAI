@@ -1,11 +1,8 @@
 'use client'
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import dynamic from 'next/dynamic'
 import { motion, AnimatePresence } from 'framer-motion'
 import gsap from 'gsap'
-
-const NeuralCanvas = dynamic(() => import('./NeuralCanvas'), { ssr: false })
 
 /* ── Cycling deal closed notifications ──────────────────── */
 const DEALS = [
@@ -141,9 +138,6 @@ export default function HeroSection() {
       className="relative w-full h-screen min-h-[720px] flex flex-col items-center justify-center overflow-hidden noise-overlay"
       id="hero"
     >
-      {/* 3D canvas */}
-      <NeuralCanvas />
-
       {/* Radial glows */}
       <div className="absolute inset-0 z-[1] pointer-events-none"
         style={{ background: 'radial-gradient(ellipse 90% 70% at 50% 35%, rgba(0,200,83,0.08) 0%, rgba(0,212,255,0.04) 40%, transparent 70%)' }} />
