@@ -13,7 +13,7 @@ const steps = [
     subtitle: 'Free strategy session',
     description:
       'We analyze your current pipeline, marketing, and sales process to identify exactly where revenue is leaking and where AI can unlock the most growth.',
-    color: '#00D4FF',
+    color: '#00C853',
     detail: 'Free — no obligation',
   },
   {
@@ -22,7 +22,7 @@ const steps = [
     subtitle: 'Custom AI systems',
     description:
       'We build your lead generation, outreach automation, and CRM infrastructure from scratch — tailored to your industry, offer, and target customer.',
-    color: '#8B5CF6',
+    color: '#5EF38C',
     detail: 'Live in under 48 hours',
   },
   {
@@ -31,7 +31,7 @@ const steps = [
     subtitle: 'Revenue on autopilot',
     description:
       'Your AI revenue systems run continuously — generating leads, nurturing prospects, and filling your pipeline while you focus on closing.',
-    color: '#00D4FF',
+    color: '#00C853',
     detail: 'Results in 30 days',
   },
 ]
@@ -83,7 +83,7 @@ export default function ProcessSection() {
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse, rgba(139,92,246,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(0,200,83,0.06) 0%, transparent 70%)',
         }}
       />
 
@@ -91,11 +91,11 @@ export default function ProcessSection() {
         {/* Heading */}
         <div className="process-heading text-center mb-16 md:mb-24">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-6 bg-[#8B5CF6]/40" />
-            <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#8B5CF6]/70">
+            <div className="h-px w-6 bg-[#00C853]/40" />
+            <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#00C853]/70">
               How it works
             </span>
-            <div className="h-px w-6 bg-[#8B5CF6]/40" />
+            <div className="h-px w-6 bg-[#00C853]/40" />
           </div>
           <h2 className="font-display font-extrabold text-white tracking-tight mb-4"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
@@ -115,7 +115,7 @@ export default function ProcessSection() {
             <div
               className="connector-line h-full origin-left"
               style={{
-                background: 'linear-gradient(90deg, #00D4FF30, #8B5CF630, #00D4FF30)',
+                background: 'linear-gradient(90deg, #00C85330, #5EF38C30, #00C85330)',
                 transform: 'scaleX(0)',
               }}
             />

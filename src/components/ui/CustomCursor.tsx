@@ -50,7 +50,7 @@ export default function CustomCursor() {
     <>
       {/* Dot */}
       <motion.div
-        className="fixed top-0 left-0 z-[9999] pointer-events-none rounded-full bg-[#00D4FF]"
+        className="fixed top-0 left-0 z-[9999] pointer-events-none rounded-full bg-[#00C853]"
         style={{
           x: dotX,
           y: dotY,
@@ -74,13 +74,13 @@ export default function CustomCursor() {
           y: ringY,
           translateX: '-50%',
           translateY: '-50%',
-          border: '1px solid rgba(0,212,255,0.5)',
+          border: '1px solid rgba(0,200,83,0.5)',
         }}
         animate={{
           opacity: isVisible ? 0.7 : 0,
           width: isHovering ? 48 : 32,
           height: isHovering ? 48 : 32,
-          background: isHovering ? 'rgba(0,212,255,0.06)' : 'transparent',
+          background: isHovering ? 'rgba(0,200,83,0.06)' : 'transparent',
         }}
         transition={{ duration: 0.25, ease: 'easeOut' }}
       />

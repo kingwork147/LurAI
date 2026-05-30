@@ -55,7 +55,7 @@ export default function Footer() {
       <div
         className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{
-          background: 'linear-gradient(90deg, transparent, rgba(0,212,255,0.15), transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(0,200,83,0.15), transparent)',
         }}
       />
 
@@ -66,23 +66,23 @@ export default function Footer() {
           <div className="col-span-2">
             <a href="#" className="flex items-center gap-2.5 mb-4 group w-fit">
               <div className="relative w-7 h-7">
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-[#00D4FF] to-[#7C3AED] opacity-90" />
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-[#00C853] to-[#5EF38C] opacity-90" />
                 <div className="absolute inset-[2px] rounded-md bg-lur-black" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <circle cx="7" cy="7" r="2.5" fill="url(#flg)" />
-                    <circle cx="2" cy="4" r="1.2" fill="rgba(0,212,255,0.7)" />
-                    <circle cx="12" cy="4" r="1.2" fill="rgba(139,92,246,0.7)" />
-                    <circle cx="2" cy="10" r="1.2" fill="rgba(139,92,246,0.7)" />
-                    <circle cx="12" cy="10" r="1.2" fill="rgba(0,212,255,0.7)" />
-                    <line x1="3.2" y1="4" x2="5.5" y2="6" stroke="rgba(0,212,255,0.4)" strokeWidth="0.8" />
-                    <line x1="10.8" y1="4" x2="8.5" y2="6" stroke="rgba(139,92,246,0.4)" strokeWidth="0.8" />
-                    <line x1="3.2" y1="10" x2="5.5" y2="8" stroke="rgba(139,92,246,0.4)" strokeWidth="0.8" />
-                    <line x1="10.8" y1="10" x2="8.5" y2="8" stroke="rgba(0,212,255,0.4)" strokeWidth="0.8" />
+                    <circle cx="2" cy="4" r="1.2" fill="rgba(0,200,83,0.7)" />
+                    <circle cx="12" cy="4" r="1.2" fill="rgba(94,243,140,0.7)" />
+                    <circle cx="2" cy="10" r="1.2" fill="rgba(94,243,140,0.7)" />
+                    <circle cx="12" cy="10" r="1.2" fill="rgba(0,200,83,0.7)" />
+                    <line x1="3.2" y1="4" x2="5.5" y2="6" stroke="rgba(0,200,83,0.4)" strokeWidth="0.8" />
+                    <line x1="10.8" y1="4" x2="8.5" y2="6" stroke="rgba(94,243,140,0.4)" strokeWidth="0.8" />
+                    <line x1="3.2" y1="10" x2="5.5" y2="8" stroke="rgba(94,243,140,0.4)" strokeWidth="0.8" />
+                    <line x1="10.8" y1="10" x2="8.5" y2="8" stroke="rgba(0,200,83,0.4)" strokeWidth="0.8" />
                     <defs>
                       <linearGradient id="flg" x1="0" y1="0" x2="14" y2="14" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#00D4FF" />
-                        <stop offset="1" stopColor="#7C3AED" />
+                        <stop stopColor="#00C853" />
+                        <stop offset="1" stopColor="#5EF38C" />
                       </linearGradient>
                     </defs>
                   </svg>

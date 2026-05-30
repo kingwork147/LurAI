@@ -28,7 +28,7 @@ const DEMOS = [
   },
   {
     tag: 'Outreach',
-    tagColor: '#8B5CF6',
+    tagColor: '#00C853',
     query: 'Build a 5-step email sequence for our top 50 dental clinic prospects.',
     lines: [
       { text: '**Sequence created — 5 emails, 14-day cadence:**', delay: 0 },
@@ -46,7 +46,7 @@ const DEMOS = [
   },
   {
     tag: 'Pipeline',
-    tagColor: '#10B981',
+    tagColor: '#5EF38C',
     query: 'Analyze our CRM pipeline and forecast Q4 revenue.',
     lines: [
       { text: '**Pipeline audit complete — 84 open deals:**', delay: 0 },
@@ -71,7 +71,7 @@ function ThinkingDots() {
       {[0, 1, 2].map((i) => (
         <motion.div
           key={i}
-          className="w-1.5 h-1.5 rounded-full bg-[#00D4FF]"
+          className="w-1.5 h-1.5 rounded-full bg-[#00C853]"
           animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.1, 0.8] }}
           transition={{ duration: 1.1, repeat: Infinity, delay: i * 0.18, ease: 'easeInOut' }}
         />
@@ -210,7 +210,7 @@ export default function ProductSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 60% 60% at 65% 50%, rgba(139,92,246,0.07) 0%, transparent 70%)',
+            'radial-gradient(ellipse 60% 60% at 65% 50%, rgba(0,200,83,0.07) 0%, transparent 70%)',
         }}
       />
       <div className="absolute inset-0 dot-bg opacity-40 pointer-events-none" />
@@ -221,8 +221,8 @@ export default function ProductSection() {
           {/* Left — copy */}
           <div className="product-left">
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-6 bg-[#8B5CF6]/50" />
-              <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#8B5CF6]/70">
+              <div className="h-px w-6 bg-[#00C853]/50" />
+              <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#00C853]/70">
                 Revenue Infrastructure
               </span>
             </div>
@@ -243,8 +243,8 @@ export default function ProductSection() {
             <div className="space-y-4">
               {[
                 { icon: '◈', label: 'Lead generation running 24/7 on autopilot', color: '#00D4FF' },
-                { icon: '◈', label: 'AI-personalized outreach at scale', color: '#8B5CF6' },
-                { icon: '◈', label: 'CRM synced and pipeline always up to date', color: '#10B981' },
+                { icon: '◈', label: 'AI-personalized outreach at scale', color: '#00C853' },
+                { icon: '◈', label: 'CRM synced and pipeline always up to date', color: '#5EF38C' },
                 { icon: '◈', label: 'Revenue forecasts you can actually rely on', color: '#00D4FF' },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-3">
@@ -353,7 +353,7 @@ export default function ProductSection() {
                           <div
                             className="w-6 h-6 rounded-lg flex items-center justify-center"
                             style={{
-                              background: `linear-gradient(135deg, ${demo.tagColor}, #7C3AED)`,
+                              background: `linear-gradient(135deg, ${demo.tagColor}, #5EF38C)`,
                             }}
                           >
                             <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
@@ -421,7 +421,7 @@ export default function ProductSection() {
                   <div
                     className="w-8 h-8 rounded-xl flex items-center justify-center"
                     style={{
-                      background: `linear-gradient(135deg, ${demo.tagColor}, #7C3AED)`,
+                      background: `linear-gradient(135deg, ${demo.tagColor}, #5EF38C)`,
                       boxShadow: `0 0 12px ${demo.tagColor}40`,
                     }}
                   >

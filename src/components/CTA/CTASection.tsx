@@ -42,7 +42,7 @@ export default function CTASection() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse, rgba(0,212,255,0.10) 0%, rgba(124,58,237,0.08) 40%, transparent 70%)',
+            'radial-gradient(ellipse, rgba(0,200,83,0.10) 0%, rgba(0,200,83,0.08) 40%, transparent 70%)',
           filter: 'blur(60px)',
         }}
       />
@@ -54,11 +54,11 @@ export default function CTASection() {
         <div className="cta-content">
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-6 bg-[#00D4FF]/40" />
-            <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#00D4FF]/70">
+            <div className="h-px w-6 bg-[#00C853]/40" />
+            <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#00C853]/70">
               Get started
             </span>
-            <div className="h-px w-6 bg-[#00D4FF]/40" />
+            <div className="h-px w-6 bg-[#00C853]/40" />
           </div>
 
           {/* Heading */}
@@ -85,7 +85,7 @@ export default function CTASection() {
               <div
                 className="flex-1 w-full relative"
                 style={{
-                  filter: focused ? 'drop-shadow(0 0 12px rgba(0,212,255,0.25))' : 'none',
+                  filter: focused ? 'drop-shadow(0 0 12px rgba(0,200,83,0.25))' : 'none',
                   transition: 'filter 0.3s ease',
                 }}
               >
@@ -97,7 +97,7 @@ export default function CTASection() {
                   onFocus={() => setFocused(true)}
                   onBlur={() => setFocused(false)}
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-full px-5 py-3.5 text-sm text-white placeholder-white/25 focus:outline-none focus:border-[#00D4FF]/50 transition-colors duration-300"
+                  className="w-full bg-white/5 border border-white/10 rounded-full px-5 py-3.5 text-sm text-white placeholder-white/25 focus:outline-none focus:border-[#00C853]/50 transition-colors duration-300"
                 />
               </div>
               <motion.button
@@ -121,7 +121,7 @@ export default function CTASection() {
               </div>
               <p className="font-display font-semibold text-white text-lg">Audit request received.</p>
               <p className="font-sans text-sm text-white/40">
-                We&apos;ll reach out to <span className="text-[#00D4FF]/70">{email}</span> within 24 hours.
+                We&apos;ll reach out to <span className="text-[#00C853]/70">{email}</span> within 24 hours.
               </p>
             </motion.div>
           )}

@@ -135,7 +135,7 @@ const features = [
     Illustration: IllustrationSalesAuto,
     title: 'AI Sales Automation',
     description: 'Automating outreach, follow-ups, and qualification so your team closes deals instead of chasing them.',
-    color: '#8B5CF6',
+    color: '#00C853',
     tags: ['Outreach', 'Follow-up', 'Nurture'],
   },
   {
@@ -149,7 +149,7 @@ const features = [
     Illustration: IllustrationContent,
     title: 'AI Content Systems',
     description: 'Scalable content engines that generate authority-building assets and fuel your lead generation at scale.',
-    color: '#10B981',
+    color: '#5EF38C',
     tags: ['SEO Content', 'Email Copy', 'Social'],
   },
   {
@@ -163,7 +163,7 @@ const features = [
     Illustration: IllustrationAnalytics,
     title: 'Revenue Analytics',
     description: 'Real-time dashboards showing exactly where revenue comes from and which levers to pull for growth.',
-    color: '#8B5CF6',
+    color: '#5EF38C',
     tags: ['Dashboards', 'Forecasting', 'Attribution'],
   },
 ]
@@ -186,17 +186,17 @@ export default function FeaturesSection() {
       {/* Backgrounds */}
       <div className="absolute inset-0 grid-bg opacity-50 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, #00D4FF33, transparent)' }} />
+        style={{ background: 'linear-gradient(to bottom, #00C85333, transparent)' }} />
 
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Heading */}
         <div ref={headingRef} className="text-center mb-16 md:mb-20">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-6 bg-[#00D4FF]/40" />
-            <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#00D4FF]/70">
+            <div className="h-px w-6 bg-[#00C853]/40" />
+            <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#00C853]/70">
               Core Services
             </span>
-            <div className="h-px w-6 bg-[#00D4FF]/40" />
+            <div className="h-px w-6 bg-[#00C853]/40" />
           </div>
           <h2 className="font-display font-extrabold text-white tracking-tight mb-4"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', textWrap: 'balance' } as React.CSSProperties}>

@@ -34,7 +34,7 @@ export default function FounderSection() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse, rgba(139,92,246,0.10) 0%, rgba(0,212,255,0.06) 45%, transparent 70%)',
+            'radial-gradient(ellipse, rgba(0,200,83,0.10) 0%, rgba(0,200,83,0.06) 45%, transparent 70%)',
           filter: 'blur(70px)',
         }}
       />
@@ -47,11 +47,11 @@ export default function FounderSection() {
         {/* ── Motto block ─────────────────────────────────────── */}
         <div className="founder-headline text-center mb-14 md:mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-6 bg-[#00D4FF]/40" />
-            <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#00D4FF]/70">
+            <div className="h-px w-6 bg-[#00C853]/40" />
+            <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#00C853]/70">
               The Foundation
             </span>
-            <div className="h-px w-6 bg-[#00D4FF]/40" />
+            <div className="h-px w-6 bg-[#00C853]/40" />
           </div>
 
           <h2
@@ -80,7 +80,7 @@ export default function FounderSection() {
         >
           <div className="glass-premium rounded-3xl p-8 md:p-12 relative overflow-hidden">
             {/* Accent top line */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B5CF6]/60 to-transparent" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00C853]/60 to-transparent" />
 
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
 
@@ -89,15 +89,15 @@ export default function FounderSection() {
                 <div
                   className="w-20 h-20 rounded-2xl flex items-center justify-center font-display font-extrabold text-lg text-white select-none"
                   style={{
-                    background: 'linear-gradient(135deg, #00D4FF 0%, #7C3AED 100%)',
+                    background: 'linear-gradient(135deg, #00C853 0%, #5EF38C 100%)',
                     boxShadow:
-                      '0 0 40px rgba(0,212,255,0.28), 0 0 80px rgba(124,58,237,0.18), inset 0 1px 0 rgba(255,255,255,0.2)',
+                      '0 0 40px rgba(0,200,83,0.28), 0 0 80px rgba(94,243,140,0.18), inset 0 1px 0 rgba(255,255,255,0.2)',
                   }}
                 >
                   RPR
                 </div>
                 <div className="hidden md:flex flex-col items-center gap-1">
-                  <div className="w-px h-16 bg-gradient-to-b from-[#8B5CF6]/40 to-transparent" />
+                  <div className="w-px h-16 bg-gradient-to-b from-[#00C853]/40 to-transparent" />
                 </div>
               </div>
 
@@ -114,14 +114,14 @@ export default function FounderSection() {
                     <span
                       className="inline-flex items-center gap-1.5 font-mono text-[10px] tracking-widest uppercase rounded-full px-3 py-1"
                       style={{
-                        color: 'rgba(0,212,255,0.65)',
-                        background: 'rgba(0,212,255,0.07)',
-                        border: '1px solid rgba(0,212,255,0.15)',
+                        color: 'rgba(0,200,83,0.65)',
+                        background: 'rgba(0,200,83,0.07)',
+                        border: '1px solid rgba(0,200,83,0.15)',
                       }}
                     >
                       <span
                         className="inline-block w-1.5 h-1.5 rounded-full"
-                        style={{ background: '#00D4FF', boxShadow: '0 0 6px rgba(0,212,255,0.8)' }}
+                        style={{ background: '#00C853', boxShadow: '0 0 6px rgba(0,200,83,0.8)' }}
                       />
                       Agarathirunalur, Thiruvarur · Tamil Nadu, India
                     </span>
@@ -131,7 +131,7 @@ export default function FounderSection() {
                 {/* Core principle quote */}
                 <blockquote
                   className="relative pl-5 mb-6"
-                  style={{ borderLeft: '2px solid rgba(139,92,246,0.55)' }}
+                  style={{ borderLeft: '2px solid rgba(0,200,83,0.55)' }}
                 >
                   <p
                     className="font-display font-semibold text-white/80 leading-snug italic"

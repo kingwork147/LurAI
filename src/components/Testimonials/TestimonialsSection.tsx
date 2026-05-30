@@ -15,8 +15,8 @@ const testimonials = [
     title: 'VP of Sales',
     company: 'Nexus Clinics',
     avatar: 'SC',
-    gradientFrom: '#00D4FF',
-    gradientTo: '#0EA5E9',
+    gradientFrom: '#00C853',
+    gradientTo: '#5EF38C',
     stars: 5,
   },
   {
@@ -26,8 +26,8 @@ const testimonials = [
     title: 'Founder',
     company: 'Orbital SaaS',
     avatar: 'MW',
-    gradientFrom: '#8B5CF6',
-    gradientTo: '#6D28D9',
+    gradientFrom: '#00C853',
+    gradientTo: '#5EF38C',
     stars: 5,
   },
   {
@@ -37,8 +37,8 @@ const testimonials = [
     title: 'CEO',
     company: 'Quantum Real Estate',
     avatar: 'PS',
-    gradientFrom: '#00D4FF',
-    gradientTo: '#7C3AED',
+    gradientFrom: '#00C853',
+    gradientTo: '#5EF38C',
     stars: 5,
   },
 ]
@@ -69,11 +69,11 @@ export default function TestimonialsSection() {
         {/* Heading */}
         <div className="testimonial-heading text-center mb-14 md:mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-6 bg-[#00D4FF]/40" />
-            <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#00D4FF]/70">
+            <div className="h-px w-6 bg-[#00C853]/40" />
+            <span className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-[#00C853]/70">
               Testimonials
             </span>
-            <div className="h-px w-6 bg-[#00D4FF]/40" />
+            <div className="h-px w-6 bg-[#00C853]/40" />
           </div>
           <h2
             className="font-display font-extrabold text-white tracking-tight mb-4"
