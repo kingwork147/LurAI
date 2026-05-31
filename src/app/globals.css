@@ -368,9 +368,14 @@ html.light ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.22); }
 
 /* ── Text color overrides ── */
 html.light .text-white     { color: #1d1d1f; }
+html.light .text-white\/90 { color: #1d1d1f; }
+html.light .text-white\/85 { color: #424245; }
 html.light .text-white\/80 { color: #424245; }
+html.light .text-white\/75 { color: #424245; }
 html.light .text-white\/70 { color: #6e6e73; }
+html.light .text-white\/65 { color: #6e6e73; }
 html.light .text-white\/60 { color: #6e6e73; }
+html.light .text-white\/55 { color: #86868b; }
 html.light .text-white\/50 { color: #86868b; }
 html.light .text-white\/45 { color: #86868b; }
 html.light .text-white\/40 { color: #98989d; }
@@ -513,6 +518,20 @@ html.light .hero-bottom-fade {
 }
 html.light .hero-vignette {
   background: radial-gradient(ellipse 110% 110% at 50% 50%, transparent 35%, rgba(255,255,255,0.88) 100%) !important;
+}
+
+/* ── Problem section background ── */
+.problem-bg {
+  background: linear-gradient(180deg, #071A2E 0%, #091F36 50%, #071A2E 100%);
+}
+html.light .problem-bg {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 50%, #ffffff 100%);
+}
+
+/* ── Problem section card icon boxes — amber tint ── */
+html.light .problem-icon-box {
+  background: rgba(245, 158, 11, 0.06) !important;
+  border-color: rgba(245, 158, 11, 0.14) !important;
 }
 
 /* ── Shimmer — very light on white ── */

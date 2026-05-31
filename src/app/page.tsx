@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navigation/Navbar'
 import HeroSection from '@/components/Hero/HeroSection'
+import ProblemSection from '@/components/Problem/ProblemSection'
 import LogoStrip from '@/components/ui/LogoStrip'
 import FeaturesSection from '@/components/Features/FeaturesSection'
 import ProductSection from '@/components/Product/ProductSection'
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <ProblemSection />
         <LogoStrip />
         <FeaturesSection />
         <ProductSection />

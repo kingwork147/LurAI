@@ -4,24 +4,24 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import gsap from 'gsap'
 
-/* ── Cycling deal closed notifications ──────────────────── */
-const DEALS = [
-  { company: 'Apex Dynamics',    value: '$24,500',  source: 'AI Outreach'   },
-  { company: 'Meridian Group',   value: '$67,200',  source: 'Auto Follow-up' },
-  { company: 'NovaTech Inc.',    value: '$41,800',  source: 'Lead Scoring'  },
-  { company: 'Cascade Partners', value: '$89,000',  source: 'Nurture Seq.'  },
-  { company: 'Vertex Capital',   value: '$112,000', source: 'Cold AI Email' },
+/* ── Cycling booked call notifications ─────────────────────── */
+const BOOKED_CALLS = [
+  { name: 'Marcus T.',  company: 'SaaS Startup',    time: '2 min ago'  },
+  { name: 'Priya K.',   company: 'Growth Agency',   time: '8 min ago'  },
+  { name: 'James W.',   company: 'B2B Software',    time: '15 min ago' },
+  { name: 'Sofia R.',   company: 'Consulting Firm', time: '24 min ago' },
+  { name: 'Daniel L.',  company: 'E-commerce Co.',  time: '32 min ago' },
 ]
 
-function LiveDealCard() {
+function BookedCallCard() {
   const [idx, setIdx] = useState(0)
 
   useEffect(() => {
-    const t = setInterval(() => setIdx(i => (i + 1) % DEALS.length), 3200)
+    const t = setInterval(() => setIdx(i => (i + 1) % BOOKED_CALLS.length), 3200)
     return () => clearInterval(t)
   }, [])
 
-  const deal = DEALS[idx]
+  const call = BOOKED_CALLS[idx]
 
   return (
     <div className="glass-premium rounded-2xl p-4 min-w-[210px]">
@@ -30,7 +30,7 @@ function LiveDealCard() {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
         </span>
-        <span className="text-[9px] font-mono uppercase tracking-widest text-white/35">Deal Closed</span>
+        <span className="text-[9px] font-mono uppercase tracking-widest text-white/35">Strategy Call Booked</span>
       </div>
       <AnimatePresence mode="wait">
         <motion.div
@@ -40,11 +40,11 @@ function LiveDealCard() {
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="font-display font-extrabold text-2xl text-white leading-none">{deal.value}</div>
-          <div className="text-xs font-medium text-white/55 mt-1">{deal.company}</div>
+          <div className="font-display font-extrabold text-lg text-white leading-tight">{call.name}</div>
+          <div className="text-xs font-medium text-white/55 mt-0.5">{call.company}</div>
           <div className="mt-2.5">
             <span className="text-[9px] bg-[#00C853]/10 border border-[#00C853]/15 text-[#00C853] px-2.5 py-0.5 rounded-full font-mono uppercase tracking-wider">
-              via {deal.source}
+              {call.time}
             </span>
           </div>
         </motion.div>
@@ -53,7 +53,7 @@ function LiveDealCard() {
   )
 }
 
-/* ── Floating wrapper ───────────────────────────────────── */
+/* ── Floating wrapper ───────────────────────────────────────── */
 function FloatCard({
   children,
   className,
@@ -82,9 +82,9 @@ function FloatCard({
   )
 }
 
-/* ── Upward-trending sparkline ──────────────────────────── */
+/* ── Upward-trending sparkline ──────────────────────────────── */
 function Sparkline({ color }: { color: string }) {
-  const pts = [0, 8, 15, 18, 10, 14, 30, 28, 25, 22, 45, 38, 40, 32, 60, 48, 80, 44, 100, 55]
+  const pts = [0, 4, 10, 8, 18, 12, 26, 18, 34, 24, 44, 32, 54, 42, 66, 52, 80, 62, 100, 75]
   let path = `M ${pts[0]} ${60 - pts[1]}`
   for (let i = 2; i < pts.length; i += 2) {
     path += ` L ${pts[i]} ${60 - pts[i + 1]}`
@@ -103,10 +103,40 @@ function Sparkline({ color }: { color: string }) {
   )
 }
 
+/* ── Achievement cards data ─────────────────────────────────── */
+const ACHIEVEMENTS = [
+  {
+    icon: '📈',
+    title: 'More Qualified Leads',
+    desc: 'Reach decision-makers that match your ideal customer profile.',
+  },
+  {
+    icon: '🎯',
+    title: 'Better Prospect Targeting',
+    desc: 'Identify high-intent prospects using intelligent research and data.',
+  },
+  {
+    icon: '🤝',
+    title: 'More Sales Conversations',
+    desc: 'Turn cold outreach into meaningful business opportunities.',
+  },
+  {
+    icon: '⚡',
+    title: 'Faster Business Growth',
+    desc: 'Create a predictable pipeline without expanding your sales team.',
+  },
+]
+
+const TRUST_ITEMS = [
+  'Founder-Led Execution',
+  'AI-Powered Lead Generation',
+  'Personalized Outreach',
+  'Built for Startups & Growing Businesses',
+]
+
 export default function HeroSection() {
   const eyebrowRef  = useRef<HTMLDivElement>(null)
-  const line1Ref    = useRef<HTMLDivElement>(null)
-  const line2Ref    = useRef<HTMLDivElement>(null)
+  const headlineRef = useRef<HTMLDivElement>(null)
   const subtitleRef = useRef<HTMLDivElement>(null)
   const ctaRef      = useRef<HTMLDivElement>(null)
   const proofRef    = useRef<HTMLDivElement>(null)
@@ -114,7 +144,7 @@ export default function HeroSection() {
 
   useLayoutEffect(() => {
     gsap.set(eyebrowRef.current,  { y: 20, opacity: 0 })
-    gsap.set([line1Ref.current, line2Ref.current], { y: 70, opacity: 0, clipPath: 'inset(0 0 100% 0)' })
+    gsap.set(headlineRef.current, { y: 50, opacity: 0 })
     gsap.set(subtitleRef.current, { y: 30, opacity: 0 })
     gsap.set(ctaRef.current,      { y: 20, opacity: 0 })
     gsap.set(proofRef.current,    { y: 16, opacity: 0 })
@@ -124,8 +154,7 @@ export default function HeroSection() {
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.4 })
     tl.to(eyebrowRef.current,  { y: 0, opacity: 1, duration: 0.8,  ease: 'power3.out' })
-      .to(line1Ref.current,    { y: 0, opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: 1.1, ease: 'power4.out' }, '-=0.4')
-      .to(line2Ref.current,    { y: 0, opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: 1.1, ease: 'power4.out' }, '-=0.8')
+      .to(headlineRef.current, { y: 0, opacity: 1, duration: 1.1,  ease: 'power4.out' }, '-=0.4')
       .to(subtitleRef.current, { y: 0, opacity: 1, duration: 0.9,  ease: 'power3.out' }, '-=0.5')
       .to(ctaRef.current,      { y: 0, opacity: 1, duration: 0.8,  ease: 'power3.out' }, '-=0.6')
       .to(proofRef.current,    { y: 0, opacity: 1, duration: 0.7,  ease: 'power3.out' }, '-=0.5')
@@ -134,77 +163,71 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section
-      className="relative w-full h-screen min-h-[720px] flex flex-col items-center justify-center overflow-hidden noise-overlay"
-      id="hero"
-    >
-      {/* Radial glows */}
-      <div className="absolute inset-0 z-[1] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 90% 70% at 50% 35%, rgba(0,200,83,0.08) 0%, rgba(0,212,255,0.04) 40%, transparent 70%)' }} />
-      <div className="absolute inset-0 z-[1] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 45%, rgba(0,200,83,0.05) 0%, transparent 60%)' }} />
+    <section className="relative w-full overflow-hidden noise-overlay" id="hero">
 
-      {/* Vignette */}
+      {/* ── Shared background layer ────────────────────────── */}
+      <div className="absolute inset-0 z-[1] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 90% 70% at 50% 30%, rgba(0,200,83,0.09) 0%, rgba(0,212,255,0.04) 40%, transparent 70%)' }} />
+      <div className="absolute inset-0 z-[1] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 35%, rgba(0,200,83,0.05) 0%, transparent 60%)' }} />
       <div className="hero-vignette absolute inset-0 z-[1] pointer-events-none"
         style={{ background: 'radial-gradient(ellipse 110% 110% at 50% 50%, transparent 35%, rgba(7,26,46,0.82) 100%)' }} />
-
-      {/* Bottom fade */}
       <div className="hero-bottom-fade absolute bottom-0 left-0 right-0 z-[2] h-48 pointer-events-none"
         style={{ background: 'linear-gradient(to bottom, transparent, #071A2E)' }} />
 
-      {/* ── Hero copy ────────────────────────────────────── */}
-      <div className="relative z-[3] text-center px-6 max-w-5xl mx-auto">
+      {/* ── Above-fold viewport area ───────────────────────── */}
+      <div className="relative h-screen min-h-[700px] flex flex-col items-center justify-center z-[3] px-6">
 
-        {/* Eyebrow — live proof */}
-        <div ref={eyebrowRef} className="mb-6 md:mb-8 flex items-center justify-center gap-3">
+        {/* Eyebrow */}
+        <div ref={eyebrowRef} className="mb-6 flex items-center justify-center gap-3">
           <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#00C853]/50" />
           <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00C853]/15 bg-[#00C853]/5">
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00C853] opacity-75" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#00C853]" />
             </span>
-            <span className="font-mono text-[10px] font-semibold tracking-[0.25em] uppercase text-[#00C853]/80">
-              $40M+ in pipeline generated
+            <span className="font-mono text-[10px] font-semibold tracking-[0.22em] uppercase text-[#00C853]/80">
+              Founder-Led AI Growth Systems
             </span>
           </div>
           <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#00C853]/50" />
         </div>
 
         {/* Headline */}
-        <div className="overflow-hidden mb-2">
-          <div ref={line1Ref}
-            className="font-display font-extrabold text-white leading-none tracking-tight"
-            style={{ fontSize: 'clamp(2.6rem, 5.8vw, 5.25rem)' }}>
-            Your Pipeline,
-          </div>
-        </div>
-        <div className="overflow-hidden mb-8 md:mb-10">
-          <div ref={line2Ref}
-            className="font-display font-extrabold leading-none tracking-tight text-gradient"
-            style={{ fontSize: 'clamp(2.6rem, 5.8vw, 5.25rem)' }}>
-            On Autopilot.
-          </div>
+        <div ref={headlineRef} className="text-center max-w-4xl mx-auto mb-6 md:mb-7">
+          <h1
+            className="font-display font-extrabold text-white leading-[1.06] tracking-tight"
+            style={{ fontSize: 'clamp(2rem, 4.8vw, 4.25rem)', textWrap: 'balance' } as React.CSSProperties}
+          >
+            Get More Qualified Leads.{' '}
+            <span className="text-gradient">More Sales Conversations.</span>{' '}
+            More Business Growth.
+          </h1>
         </div>
 
         {/* Subtitle */}
-        <div ref={subtitleRef} className="max-w-2xl mx-auto mb-10 md:mb-12">
-          <p className="font-sans text-base md:text-lg font-normal text-white/50 leading-relaxed"
-            style={{ textWrap: 'balance' } as React.CSSProperties}>
-            AI that prospects, qualifies, follows up, and books meetings — 24/7, without a sales hire.
-            Clients average{' '}
-            <span className="text-white/75 font-semibold">3.4× pipeline growth</span>
-            {' '}in their first 90 days.
+        <div ref={subtitleRef} className="max-w-2xl mx-auto text-center mb-9 md:mb-10">
+          <p
+            className="font-sans text-base md:text-lg font-normal text-white/50 leading-relaxed"
+            style={{ textWrap: 'balance' } as React.CSSProperties}
+          >
+            Lur AI helps{' '}
+            <span className="text-white/70 font-medium">startups, agencies, and growing businesses</span>{' '}
+            generate high-quality leads through AI-powered prospecting, personalized outreach,
+            and founder-led execution — without the cost of building a large sales team.
           </p>
         </div>
 
         {/* CTAs */}
-        <div ref={ctaRef} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div ref={ctaRef} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
           <a href="#cta" className="btn-primary px-8 py-4 text-sm font-semibold text-white glow-strong">
-            Book a Free Revenue Audit
+            Book a Free Strategy Call
           </a>
-          <a href="#product"
-            className="group flex items-center gap-2 text-sm font-medium text-white/45 hover:text-white transition-colors duration-300 animated-underline">
-            <span>See how it works</span>
+          <a
+            href="#product"
+            className="group flex items-center gap-2 text-sm font-medium text-white/45 hover:text-white transition-colors duration-300 animated-underline"
+          >
+            <span>See How Lur AI Works</span>
             <motion.span
               animate={{ x: [0, 4, 0] }}
               transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
@@ -213,8 +236,8 @@ export default function HeroSection() {
         </div>
 
         {/* Trust strip */}
-        <div ref={proofRef} className="flex items-center justify-center gap-6 mt-8 flex-wrap">
-          {['No sales hire needed', 'Live in 7 days', '90-day guarantee'].map((label, i) => (
+        <div ref={proofRef} className="flex items-center justify-center gap-4 md:gap-6 flex-wrap">
+          {TRUST_ITEMS.map((label, i) => (
             <div key={i} className="flex items-center gap-1.5">
               <svg className="w-3 h-3 text-emerald-400 flex-shrink-0" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -223,73 +246,108 @@ export default function HeroSection() {
             </div>
           ))}
         </div>
+
+        {/* ── Floating data cards ──────────────────────────── */}
+
+        {/* Top-right: booked meetings growth */}
+        <FloatCard className="absolute top-[18%] right-[5%] hidden xl:block" delay={1.8} offsetY={-12}>
+          <div className="glass-premium rounded-2xl p-4 min-w-[160px]">
+            <div className="flex items-center justify-between mb-1">
+              <div className="text-[9px] font-mono text-white/30 uppercase tracking-widest">Meetings / Mo</div>
+              <span className="text-[9px] font-semibold text-emerald-400">↑ 41%</span>
+            </div>
+            <div className="font-display text-2xl font-extrabold text-gradient leading-none">+124</div>
+            <div className="mt-2">
+              <Sparkline color="#00C853" />
+            </div>
+            <div className="text-[10px] text-white/25 mt-1">booked this month</div>
+          </div>
+        </FloatCard>
+
+        {/* Top-left: strategy call booked */}
+        <FloatCard className="absolute top-[22%] left-[5%] hidden xl:block" delay={2.0} offsetY={10}>
+          <BookedCallCard />
+        </FloatCard>
+
+        {/* Bottom-right: prospects found */}
+        <FloatCard className="absolute bottom-[22%] right-[6%] hidden xl:block" delay={2.2} offsetY={-8}>
+          <div className="glass-premium rounded-2xl px-4 py-3">
+            <div className="flex items-center gap-2.5 mb-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+              </span>
+              <span className="text-[9px] font-mono uppercase tracking-widest text-white/30">Prospects Found</span>
+            </div>
+            <div className="font-display font-bold text-base text-white">847 ICP matches</div>
+            <div className="text-[10px] text-white/30 mt-0.5">identified today</div>
+          </div>
+        </FloatCard>
+
+        {/* Bottom-left: reply rate */}
+        <FloatCard className="absolute bottom-[27%] left-[5%] hidden xl:block" delay={2.4} offsetY={12}>
+          <div className="glass-premium rounded-2xl p-4">
+            <div className="text-[9px] font-mono text-white/30 uppercase tracking-widest mb-1">Reply Rate</div>
+            <div className="flex items-baseline gap-1">
+              <div className="font-display text-3xl font-extrabold text-white">28.4</div>
+              <div className="font-display text-lg font-bold text-[#5EF38C]">%</div>
+            </div>
+            <div className="text-[10px] text-white/30 mt-0.5">vs 2–4% industry avg</div>
+            <div className="flex items-end gap-0.5 mt-2 h-7">
+              {[3, 4, 5, 6, 7, 9, 10, 13, 14, 16].map((v, i) => (
+                <div key={i} className="flex-1 rounded-sm" style={{
+                  height: `${(v / 16) * 100}%`,
+                  background: 'linear-gradient(to top, #5EF38C, #00C853)',
+                  opacity: 0.4 + (i / 9) * 0.6,
+                }} />
+              ))}
+            </div>
+          </div>
+        </FloatCard>
+
+        {/* Scroll indicator */}
+        <div ref={scrollRef} className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+          <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-white/20">Scroll</span>
+          <div className="w-px h-10 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-[#00C853]/50 to-transparent animate-scan-line" />
+          </div>
+        </div>
       </div>
 
-      {/* ── Floating cards ──────────────────────────────── */}
-
-      {/* Top-right: revenue sparkline */}
-      <FloatCard className="absolute top-[20%] right-[5%] z-[3] hidden xl:block" delay={1.8} offsetY={-12}>
-        <div className="glass-premium rounded-2xl p-4 min-w-[160px]">
-          <div className="flex items-center justify-between mb-1">
-            <div className="text-[9px] font-mono text-white/30 uppercase tracking-widest">Revenue / Mo</div>
-            <span className="text-[9px] font-semibold text-emerald-400">↑ 34%</span>
-          </div>
-          <div className="font-display text-2xl font-extrabold text-gradient leading-none">$847K</div>
-          <div className="mt-2">
-            <Sparkline color="#00C853" />
-          </div>
-          <div className="text-[10px] text-white/25 mt-1">avg. client result</div>
+      {/* ── "What We Help You Achieve" — below fold ─────────── */}
+      <div className="relative z-[3] max-w-5xl mx-auto px-6 pb-24">
+        {/* Section label */}
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/8 to-white/8" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/25 whitespace-nowrap">
+            What We Help You Achieve
+          </span>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/8 to-white/8" />
         </div>
-      </FloatCard>
 
-      {/* Top-left: live deal closed */}
-      <FloatCard className="absolute top-[24%] left-[5%] z-[3] hidden xl:block" delay={2.0} offsetY={10}>
-        <LiveDealCard />
-      </FloatCard>
-
-      {/* Bottom-right: live pipeline count */}
-      <FloatCard className="absolute bottom-[18%] right-[6%] z-[3] hidden xl:block" delay={2.2} offsetY={-8}>
-        <div className="glass-premium rounded-2xl px-4 py-3">
-          <div className="flex items-center gap-2.5 mb-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
-            </span>
-            <span className="text-[9px] font-mono uppercase tracking-widest text-white/30">Pipeline Live</span>
-          </div>
-          <div className="font-display font-bold text-base text-white">1,247 leads</div>
-          <div className="text-[10px] text-white/30 mt-0.5">being worked right now</div>
-        </div>
-      </FloatCard>
-
-      {/* Bottom-left: ROI */}
-      <FloatCard className="absolute bottom-[24%] left-[5%] z-[3] hidden xl:block" delay={2.4} offsetY={12}>
-        <div className="glass-premium rounded-2xl p-4">
-          <div className="text-[9px] font-mono text-white/30 uppercase tracking-widest mb-1">Average ROI</div>
-          <div className="flex items-baseline gap-1">
-            <div className="font-display text-3xl font-extrabold text-white">14.2</div>
-            <div className="font-display text-lg font-bold text-[#5EF38C]">×</div>
-          </div>
-          <div className="text-[10px] text-white/30 mt-0.5">across 200+ clients</div>
-          <div className="flex items-end gap-0.5 mt-2 h-7">
-            {[5, 7, 6, 9, 8, 11, 10, 13, 12, 14].map((v, i) => (
-              <div key={i} className="flex-1 rounded-sm" style={{
-                height: `${(v / 14) * 100}%`,
-                background: 'linear-gradient(to top, #5EF38C, #00C853)',
-                opacity: 0.4 + (i / 9) * 0.6,
-              }} />
-            ))}
-          </div>
-        </div>
-      </FloatCard>
-
-      {/* Scroll indicator */}
-      <div ref={scrollRef} className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[3] flex flex-col items-center gap-2">
-        <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-white/20">Scroll</span>
-        <div className="w-px h-12 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#00C853]/50 to-transparent animate-scan-line" />
+        {/* Achievement cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {ACHIEVEMENTS.map((card, i) => (
+            <motion.div
+              key={i}
+              className="glass-premium glass-hover rounded-2xl p-5 text-left"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ delay: i * 0.07, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="text-2xl mb-3 select-none">{card.icon}</div>
+              <div className="font-display font-bold text-white text-sm leading-snug mb-2">
+                {card.title}
+              </div>
+              <div className="text-[11px] text-white/40 leading-relaxed">
+                {card.desc}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
+
     </section>
   )
 }
