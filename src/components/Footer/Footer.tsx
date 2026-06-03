@@ -62,18 +62,6 @@ function IconWhatsAppLarge() {
   )
 }
 
-function IconCalendar() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <rect x="1.5" y="3" width="13" height="11.5" rx="2" stroke="currentColor" strokeWidth="1.3" />
-      <path d="M1.5 6.5h13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-      <path d="M5 1.5v2.5M11 1.5v2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-      <rect x="4.5" y="9" width="2.5" height="2.5" rx="0.5" fill="currentColor" opacity="0.55" />
-      <rect x="9" y="9" width="2.5" height="2.5" rx="0.5" fill="currentColor" opacity="0.35" />
-    </svg>
-  )
-}
-
 /* ── Logo ─────────────────────────────────────────────────── */
 
 function FooterLogo() {
@@ -190,97 +178,13 @@ const fadeUp = {
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden" style={{ background: '#050F1C' }}>
+    <footer className="relative overflow-hidden" style={{ background: '#050F1C', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
 
-      {/* ── Top CTA strip ──────────────────────────────────── */}
+      {/* Top accent line */}
       <div
-        className="relative overflow-hidden"
-        style={{
-          background: 'linear-gradient(180deg, rgba(0,200,83,0.07) 0%, rgba(0,200,83,0.02) 100%)',
-          borderTop: '1px solid rgba(0,200,83,0.18)',
-          borderBottom: '1px solid rgba(255,255,255,0.05)',
-        }}
-      >
-        {/* Glow */}
-        <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[300px] pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at 50% 0%, rgba(0,200,83,0.10) 0%, transparent 65%)',
-            filter: 'blur(50px)',
-          }}
-        />
-        {/* Top accent */}
-        <div
-          className="absolute top-0 left-0 right-0 h-px"
-          style={{ background: 'linear-gradient(90deg, transparent, rgba(0,200,83,0.55) 40%, rgba(94,243,140,0.35) 60%, transparent)' }}
-        />
-
-        <motion.div
-          className="relative max-w-5xl mx-auto px-6 md:px-10 py-14 md:py-16 text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-10%' }}
-          variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
-        >
-          <motion.div
-            variants={fadeUp}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center justify-center gap-3 mb-4"
-          >
-            <div className="h-px w-6 bg-[#00C853]/40" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#00C853]/70">Get Started</span>
-            <div className="h-px w-6 bg-[#00C853]/40" />
-          </motion.div>
-
-          <motion.h2
-            variants={fadeUp}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-extrabold tracking-tight leading-[1.07] text-white mb-4"
-            style={{ fontSize: 'clamp(1.8rem, 4vw, 3.2rem)', textWrap: 'balance' } as React.CSSProperties}
-          >
-            Ready To Generate More Leads{' '}
-            <span className="text-gradient">And Grow Your Business?</span>
-          </motion.h2>
-
-          <motion.p
-            variants={fadeUp}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sans text-base text-white/42 leading-relaxed max-w-xl mx-auto mb-8"
-          >
-            Let&apos;s discuss your goals and identify the fastest path to more qualified opportunities.
-          </motion.p>
-
-          <motion.div
-            variants={fadeUp}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3"
-          >
-            <a
-              href="https://calendly.com/rajprabhuwork"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-2 whitespace-nowrap"
-            >
-              <IconCalendar />
-              Claim Your Free Lead Audit
-            </a>
-            <a
-              href="https://wa.me/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-sans font-semibold text-sm whitespace-nowrap transition-all duration-200"
-              style={{
-                background: 'rgba(37,211,102,0.08)',
-                border: '1px solid rgba(37,211,102,0.22)',
-                color: '#25D366',
-              }}
-            >
-              <IconWhatsAppLarge />
-              Chat On WhatsApp
-            </a>
-          </motion.div>
-        </motion.div>
-      </div>
+        className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(0,200,83,0.25) 40%, rgba(94,243,140,0.15) 60%, transparent)' }}
+      />
 
       {/* ── Main content ───────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-12">
