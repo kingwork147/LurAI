@@ -11,6 +11,7 @@ import ProcessSection from '@/components/Process/ProcessSection'
 import StatsSection from '@/components/Stats/StatsSection'
 import TestimonialsSection from '@/components/Testimonials/TestimonialsSection'
 import FounderSection from '@/components/Founder/FounderSection'
+import FAQSection from '@/components/FAQ/FAQSection'
 import CTASection from '@/components/CTA/CTASection'
 import Footer from '@/components/Footer/Footer'
 
@@ -24,13 +25,14 @@ export default function Home() {
         <LeadGenerationSection />
         <ServicesSection />
         <WhyUsSection />
-        <LogoStrip />
+        {/* <LogoStrip /> */}
         {/* <FeaturesSection /> */}
         {/* <ProductSection /> */}
         {/* <ProcessSection /> */}
         {/* <StatsSection /> */}
-        <TestimonialsSection />
         <FounderSection />
+        <TestimonialsSection />
+        <FAQSection />
         <CTASection />
       </main>
       <Footer />
