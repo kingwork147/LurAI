@@ -286,7 +286,7 @@ export default function CTASection() {
               </p>
 
               <motion.a
-                href="https://wa.me/"
+                href="https://wa.me/916383568574"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-sans font-semibold text-sm whitespace-nowrap transition-all duration-200"

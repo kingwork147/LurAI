@@ -157,7 +157,7 @@ const contactItems = [
     Icon: IconWhatsApp,
     label: 'WhatsApp',
     value: 'Chat With Us',
-    href: 'https://wa.me/',
+    href: 'https://wa.me/916383568574',
   },
   {
     Icon: IconPin,
@@ -414,7 +414,7 @@ export default function Footer() {
                 <IconLinkedIn />
               </a>
               <a
-                href="https://wa.me/"
+                href="https://wa.me/916383568574"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
