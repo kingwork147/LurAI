@@ -1,6 +1,9 @@
 import Navbar from '@/components/Navigation/Navbar'
 import HeroSection from '@/components/Hero/HeroSection'
 import ProblemSection from '@/components/Problem/ProblemSection'
+import LeadGenerationSection from '@/components/LeadGeneration/LeadGenerationSection'
+import ServicesSection from '@/components/Services/ServicesSection'
+import WhyUsSection from '@/components/WhyUs/WhyUsSection'
 import LogoStrip from '@/components/ui/LogoStrip'
 import FeaturesSection from '@/components/Features/FeaturesSection'
 import ProductSection from '@/components/Product/ProductSection'
@@ -18,6 +21,9 @@ export default function Home() {
       <main>
         <HeroSection />
         <ProblemSection />
+        <LeadGenerationSection />
+        <ServicesSection />
+        <WhyUsSection />
         <LogoStrip />
         <FeaturesSection />
         <ProductSection />
