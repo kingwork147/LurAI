@@ -162,8 +162,8 @@ const contactItems = [
   {
     Icon: IconPhone,
     label: 'Phone',
-    value: '+91 00000 00000',
-    href: 'tel:+910000000000',
+    value: '+91 63835 68574',
+    href: 'tel:+916383568574',
   },
   {
     Icon: IconWhatsApp,
