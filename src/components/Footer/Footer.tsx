@@ -144,8 +144,8 @@ const contactItems = [
   {
     Icon: IconMail,
     label: 'Email',
-    value: 'rajprabhuwork@gmail.com',
-    href: 'mailto:rajprabhuwork@gmail.com',
+    value: 'raj@lurai.in',
+    href: 'mailto:raj@lurai.in',
   },
   {
     Icon: IconPhone,
