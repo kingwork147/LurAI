@@ -254,8 +254,8 @@ export default function CTASection() {
             whileHover={{ y: -4 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              background: 'rgba(255,255,255,0.025)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--surface-card)',
+              border: '1px solid var(--border-default)',
             }}
           >
             {/* Subtle WhatsApp glow on hover */}
@@ -318,8 +318,8 @@ export default function CTASection() {
           <div
             className="relative pl-8 pr-8 py-7 md:py-8 flex flex-col md:flex-row md:items-center md:gap-10"
             style={{
-              background: 'rgba(255,255,255,0.025)',
-              border: '1px solid rgba(255,255,255,0.07)',
+              background: 'var(--surface-card)',
+              border: '1px solid var(--border-subtle)',
               borderRadius: '1rem',
             }}
           >
@@ -352,8 +352,8 @@ export default function CTASection() {
               whileHover={{ y: -3 }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               style={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.06)',
+                background: 'var(--surface-card)',
+                border: '1px solid var(--border-subtle)',
               }}
             >
               {/* Hover border glow */}
@@ -390,8 +390,8 @@ export default function CTASection() {
           <div
             className="relative rounded-3xl overflow-hidden text-center px-8 md:px-16 py-16 md:py-20"
             style={{
-              background: 'rgba(255,255,255,0.025)',
-              border: '1px solid rgba(255,255,255,0.07)',
+              background: 'var(--surface-card)',
+              border: '1px solid var(--border-subtle)',
             }}
           >
             {/* Top accent line */}

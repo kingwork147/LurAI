@@ -236,7 +236,7 @@ export default function FounderSection() {
               </div>
 
               {/* Divider */}
-              <div className="w-full h-px" style={{ background: 'rgba(255,255,255,0.06)' }} />
+              <div className="w-full h-px" style={{ background: 'var(--divider)' }} />
 
               {/* Action buttons */}
               <div className="w-full flex flex-col gap-2.5">
@@ -246,19 +246,19 @@ export default function FounderSection() {
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl font-sans font-semibold text-sm transition-all duration-200"
                   style={{
-                    color: 'rgba(255,255,255,0.75)',
+                    color: 'var(--text-body-inline)',
                     background: 'rgba(10,102,194,0.12)',
                     border: '1px solid rgba(10,102,194,0.28)',
                   }}
                   onMouseEnter={e => {
                     ;(e.currentTarget as HTMLAnchorElement).style.background = 'rgba(10,102,194,0.22)'
                     ;(e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(10,102,194,0.48)'
-                    ;(e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.95)'
+                    ;(e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-primary-inline)'
                   }}
                   onMouseLeave={e => {
                     ;(e.currentTarget as HTMLAnchorElement).style.background = 'rgba(10,102,194,0.12)'
                     ;(e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(10,102,194,0.28)'
-                    ;(e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)'
+                    ;(e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-body-inline)'
                   }}
                 >
                   <span style={{ color: '#0A66C2' }}><IconLinkedIn /></span>

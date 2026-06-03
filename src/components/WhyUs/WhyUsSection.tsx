@@ -163,11 +163,11 @@ function CellValue({ value }: { value: RowValue }) {
     return (
       <span
         className="inline-flex items-center justify-center w-6 h-6 rounded-full"
-        style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+        style={{ background: 'var(--cell-false-bg)', border: '1px solid var(--cell-false-border)' }}
       >
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <line x1="3" y1="3" x2="9" y2="9" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" strokeLinecap="round" />
-          <line x1="9" y1="3" x2="3" y2="9" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="3" y1="3" x2="9" y2="9" style={{ stroke: 'var(--cell-false-stroke)' }} strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="9" y1="3" x2="3" y2="9" style={{ stroke: 'var(--cell-false-stroke)' }} strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       </span>
     )
@@ -332,12 +332,12 @@ export default function WhyUsSection() {
 
             {/* Header row */}
             <div className="grid" style={{ gridTemplateColumns: '1fr 160px 140px' }}>
-              <div className="px-6 md:px-8 py-4 border-b" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+              <div className="px-6 md:px-8 py-4 border-b" style={{ borderColor: 'var(--table-border)' }}>
                 <span className="font-mono text-[10px] uppercase tracking-widest text-white/22">Feature</span>
               </div>
               <div
                 className="px-4 py-4 border-b border-l text-center"
-                style={{ borderColor: 'rgba(255,255,255,0.06)' }}
+                style={{ borderColor: 'var(--table-border)' }}
               >
                 <span className="font-mono text-[10px] uppercase tracking-widest text-white/22">
                   Traditional Agency
@@ -346,7 +346,7 @@ export default function WhyUsSection() {
               <div
                 className="px-4 py-4 border-b border-l text-center"
                 style={{
-                  borderColor: 'rgba(255,255,255,0.06)',
+                  borderColor: 'var(--table-border)',
                   background: 'rgba(0,200,83,0.04)',
                 }}
               >
@@ -363,7 +363,7 @@ export default function WhyUsSection() {
                 className="wu-row grid"
                 style={{
                   gridTemplateColumns: '1fr 160px 140px',
-                  borderBottom: i < comparisonRows.length - 1 ? '1px solid rgba(255,255,255,0.05)' : undefined,
+                  borderBottom: i < comparisonRows.length - 1 ? '1px solid var(--table-row-border)' : undefined,
                 }}
               >
                 <div className="px-6 md:px-8 py-4 flex items-center">
@@ -371,14 +371,14 @@ export default function WhyUsSection() {
                 </div>
                 <div
                   className="px-4 py-4 flex items-center justify-center border-l"
-                  style={{ borderColor: 'rgba(255,255,255,0.05)' }}
+                  style={{ borderColor: 'var(--table-row-border)' }}
                 >
                   <CellValue value={row.traditional} />
                 </div>
                 <div
                   className="px-4 py-4 flex items-center justify-center border-l"
                   style={{
-                    borderColor: 'rgba(255,255,255,0.05)',
+                    borderColor: 'var(--table-row-border)',
                     background: 'rgba(0,200,83,0.025)',
                   }}
                 >

@@ -317,7 +317,7 @@ export default function TestimonialsSection() {
                 </blockquote>
 
                 {/* Author */}
-                <div className="flex items-center gap-3 pt-4 border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+                <div className="flex items-center gap-3 pt-4 border-t" style={{ borderColor: 'var(--divider)' }}>
                   <Avatar initials={card.initials} size="sm" />
                   <div>
                     <div className="font-sans text-xs text-white/38">{card.title}</div>

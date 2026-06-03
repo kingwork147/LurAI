@@ -60,12 +60,12 @@ function ToggleIcon({ open }: { open: boolean }) {
       {/* Horizontal bar — always visible */}
       <span
         className="absolute inset-y-1/2 left-0 right-0 h-[1.5px] rounded-full -translate-y-1/2 transition-colors duration-300"
-        style={{ background: open ? '#00C853' : 'rgba(255,255,255,0.35)' }}
+        style={{ background: open ? '#00C853' : 'var(--icon-muted)' }}
       />
       {/* Vertical bar — fades + shrinks when open */}
       <motion.span
         className="absolute inset-x-1/2 top-0 bottom-0 w-[1.5px] rounded-full -translate-x-1/2"
-        style={{ background: open ? '#00C853' : 'rgba(255,255,255,0.35)' }}
+        style={{ background: open ? '#00C853' : 'var(--icon-muted)' }}
         animate={{ scaleY: open ? 0 : 1, opacity: open ? 0 : 1 }}
         transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
       />
@@ -96,12 +96,10 @@ function FAQItem({
       <div
         className="relative rounded-2xl transition-all duration-300"
         style={{
-          background: isOpen
-            ? 'rgba(255,255,255,0.04)'
-            : 'rgba(255,255,255,0.025)',
+          background: isOpen ? 'var(--surface-card-mid)' : 'var(--surface-card)',
           border: isOpen
             ? '1px solid rgba(0,200,83,0.22)'
-            : '1px solid rgba(255,255,255,0.07)',
+            : '1px solid var(--border-default)',
           boxShadow: isOpen
             ? '0 0 0 1px rgba(0,200,83,0.08), inset 0 1px 0 rgba(0,200,83,0.06)'
             : 'none',
@@ -141,13 +139,13 @@ function FAQItem({
           <div className="flex items-start gap-4 min-w-0">
             <span
               className="font-mono text-[10px] tracking-[0.2em] pt-0.5 flex-shrink-0 transition-colors duration-300"
-              style={{ color: isOpen ? '#00C853' : 'rgba(255,255,255,0.2)' }}
+              style={{ color: isOpen ? '#00C853' : 'var(--text-faint-inline)' }}
             >
               {String(index + 1).padStart(2, '0')}
             </span>
             <span
               className="font-display font-semibold text-[15px] md:text-base leading-snug transition-colors duration-300"
-              style={{ color: isOpen ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.72)' }}
+              style={{ color: isOpen ? 'var(--text-primary-inline)' : 'var(--text-body-inline)' }}
             >
               {faq.question}
             </span>
@@ -157,8 +155,8 @@ function FAQItem({
           <div
             className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300"
             style={{
-              background: isOpen ? 'rgba(0,200,83,0.1)' : 'rgba(255,255,255,0.04)',
-              border: isOpen ? '1px solid rgba(0,200,83,0.2)' : '1px solid rgba(255,255,255,0.07)',
+              background: isOpen ? 'rgba(0,200,83,0.1)' : 'var(--surface-card-mid)',
+              border: isOpen ? '1px solid rgba(0,200,83,0.2)' : '1px solid var(--border-default)',
             }}
           >
             <ToggleIcon open={isOpen} />
@@ -278,8 +276,8 @@ export default function FAQSection() {
         >
           <div className="relative rounded-3xl overflow-hidden text-center"
             style={{
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--surface-card)',
+              border: '1px solid var(--border-default)',
             }}
           >
             {/* Top accent */}

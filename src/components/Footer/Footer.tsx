@@ -178,7 +178,7 @@ const fadeUp = {
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden" style={{ background: '#050F1C', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+    <footer className="relative overflow-hidden" style={{ background: 'var(--footer-bg)', borderTop: '1px solid var(--border-subtle)' }}>
 
       {/* Top accent line */}
       <div
@@ -307,7 +307,7 @@ export default function Footer() {
         {/* ── Local SEO ──────────────────────────────────────── */}
         <motion.div
           className="border-t pt-12 pb-12"
-          style={{ borderColor: 'rgba(255,255,255,0.05)' }}
+          style={{ borderColor: 'var(--border-subtle)' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-8%' }}
@@ -347,7 +347,7 @@ export default function Footer() {
         {/* ── Trust badges ───────────────────────────────────── */}
         <motion.div
           className="border-t py-8"
-          style={{ borderColor: 'rgba(255,255,255,0.05)' }}
+          style={{ borderColor: 'var(--border-subtle)' }}
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-8%' }}
@@ -371,7 +371,7 @@ export default function Footer() {
         {/* ── Bottom bar ─────────────────────────────────────── */}
         <div
           className="border-t pt-7 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderColor: 'rgba(255,255,255,0.05)' }}
+          style={{ borderColor: 'var(--border-subtle)' }}
         >
           {/* Copyright */}
           <p className="font-sans text-xs text-white/22 order-2 sm:order-1">
@@ -394,9 +394,9 @@ export default function Footer() {
                 aria-label="LinkedIn"
                 className="w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-200"
                 style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  color: 'rgba(255,255,255,0.35)',
+                  background: 'var(--surface-card-mid)',
+                  border: '1px solid var(--border-default)',
+                  color: 'var(--icon-muted)',
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget
@@ -406,9 +406,9 @@ export default function Footer() {
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget
-                  el.style.background = 'rgba(255,255,255,0.04)'
-                  el.style.borderColor = 'rgba(255,255,255,0.07)'
-                  el.style.color = 'rgba(255,255,255,0.35)'
+                  el.style.background = 'var(--surface-card-mid)'
+                  el.style.borderColor = 'var(--border-default)'
+                  el.style.color = 'var(--icon-muted)'
                 }}
               >
                 <IconLinkedIn />
@@ -420,9 +420,9 @@ export default function Footer() {
                 aria-label="WhatsApp"
                 className="w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-200"
                 style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  color: 'rgba(255,255,255,0.35)',
+                  background: 'var(--surface-card-mid)',
+                  border: '1px solid var(--border-default)',
+                  color: 'var(--icon-muted)',
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget
@@ -432,9 +432,9 @@ export default function Footer() {
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget
-                  el.style.background = 'rgba(255,255,255,0.04)'
-                  el.style.borderColor = 'rgba(255,255,255,0.07)'
-                  el.style.color = 'rgba(255,255,255,0.35)'
+                  el.style.background = 'var(--surface-card-mid)'
+                  el.style.borderColor = 'var(--border-default)'
+                  el.style.color = 'var(--icon-muted)'
                 }}
               >
                 <IconWhatsAppLarge />
@@ -451,10 +451,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom fade-out */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, transparent, rgba(5,15,28,0.6))' }}
-      />
+      <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none footer-fade" />
     </footer>
   )
 }
