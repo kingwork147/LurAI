@@ -25,10 +25,10 @@ export default function Home() {
         <ServicesSection />
         <WhyUsSection />
         <LogoStrip />
-        <FeaturesSection />
-        <ProductSection />
-        <ProcessSection />
-        <StatsSection />
+        {/* <FeaturesSection /> */}
+        {/* <ProductSection /> */}
+        {/* <ProcessSection /> */}
+        {/* <StatsSection /> */}
         <TestimonialsSection />
         <FounderSection />
         <CTASection />
