@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -86,18 +87,19 @@ export default function FounderSection() {
 
               {/* Avatar */}
               <div className="shrink-0 flex flex-col items-center gap-3">
-                <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center font-display font-extrabold text-lg text-white select-none"
-                  style={{
-                    background: 'linear-gradient(135deg, #00C853 0%, #5EF38C 100%)',
-                    boxShadow:
-                      '0 0 40px rgba(0,200,83,0.28), 0 0 80px rgba(94,243,140,0.18), inset 0 1px 0 rgba(255,255,255,0.2)',
-                  }}
-                >
-                  RPR
+                <div className="relative" style={{ padding: '3px', borderRadius: '9999px', background: 'linear-gradient(135deg, #00C853, #5EF38C, #00C853)', boxShadow: '0 0 40px rgba(0,200,83,0.45), 0 0 90px rgba(94,243,140,0.22)' }}>
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden">
+                    <Image
+                      src="/founder.jpg"
+                      alt="Raj Prabhu Rajasekaran"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
                 </div>
                 <div className="hidden md:flex flex-col items-center gap-1">
-                  <div className="w-px h-16 bg-gradient-to-b from-[#00C853]/40 to-transparent" />
+                  <div className="w-px h-12 bg-gradient-to-b from-[#00C853]/40 to-transparent" />
                 </div>
               </div>
 
