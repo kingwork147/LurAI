@@ -6,9 +6,14 @@ import { useScrollY } from '@/hooks/useScrollY'
 import { useTheme } from '@/providers/ThemeProvider'
 
 const navLinks = [
-  { label: 'Features', href: '#features' },
-  { label: 'Process', href: '#process' },
-  { label: 'Founder', href: '#founder' },
+  { label: 'Problem',      href: '#problem' },
+  { label: 'Process',      href: '#lead-generation' },
+  { label: 'Services',     href: '#services' },
+  { label: 'Why Us',       href: '#why-us' },
+  { label: 'Founder',      href: '#founder' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'FAQ',          href: '#faq' },
+  { label: 'Contact',      href: '#cta' },
 ]
 
 function SunIcon() {

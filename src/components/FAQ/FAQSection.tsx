@@ -317,7 +317,7 @@ export default function FAQSection() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href="#cta" className="btn-primary whitespace-nowrap">
+                <a href="#cta" className="btn-primary inline-flex items-center justify-center whitespace-nowrap">
                   Book A Free Strategy Call
                 </a>
                 <a

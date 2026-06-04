@@ -120,12 +120,15 @@ const industries = [
 ]
 
 const quickLinks = [
-  { label: 'Home', href: '#' },
-  { label: 'Services', href: '#services' },
-  { label: 'Why Lur AI', href: '#why-us' },
-  { label: 'Meet The Founder', href: '#founder' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#cta' },
+  { label: 'Home',         href: '#' },
+  { label: 'Problem',      href: '#problem' },
+  { label: 'Process',      href: '#lead-generation' },
+  { label: 'Services',     href: '#services' },
+  { label: 'Why Us',       href: '#why-us' },
+  { label: 'Founder',      href: '#founder' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'FAQ',          href: '#faq' },
+  { label: 'Contact',      href: '#cta' },
 ]
 
 const cities = [
