@@ -7,7 +7,7 @@ import { useTheme } from '@/providers/ThemeProvider'
 
 const navLinks = [
   { label: 'Problem',      href: '#problem' },
-  { label: 'Process',      href: '#lead-generation' },
+  { label: 'Solution',     href: '#lead-generation' },
   { label: 'Services',     href: '#services' },
   { label: 'Why Us',       href: '#why-us' },
   { label: 'Founder',      href: '#founder' },
@@ -123,40 +123,13 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA + Theme Toggle */}
+          {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            {/* Theme toggle */}
-            <motion.button
-              onClick={toggleTheme}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium transition-all duration-300"
-              style={{
-                background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)',
-                border: isDark ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(0,0,0,0.10)',
-                color: isDark ? 'rgba(255,255,255,0.45)' : 'rgba(17,17,17,0.55)',
-              }}
-              whileTap={{ scale: 0.94 }}
-              aria-label="Toggle theme"
-            >
-              <motion.span
-                key={theme}
-                initial={{ rotate: -30, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                transition={{ duration: 0.25 }}
-              >
-                {isDark ? <SunIcon /> : <MoonIcon />}
-              </motion.span>
-              <span>{isDark ? 'Light' : 'Dark'}</span>
-            </motion.button>
-
-            <a href="#" className="text-sm font-medium transition-colors duration-200"
-              style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(17,17,17,0.55)' }}>
-              Sign in
-            </a>
             <a
-              href="#cta"
+              href="/signin"
               className="btn-primary text-sm font-medium text-white px-5 py-2.5"
             >
-              Get Early Access
+              Sign in
             </a>
           </div>
 
@@ -191,6 +164,36 @@ export default function Navbar() {
         </div>
       </motion.header>
 
+      {/* Floating theme toggle — fixed to right edge, vertically centered */}
+      <div className="fixed right-0 top-1/2 z-50" style={{ transform: 'translateY(-50%)' }}>
+        <motion.button
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+          className="flex items-center justify-center rounded-l-xl"
+          style={{
+            width: 34,
+            height: 34,
+            background: isDark ? 'rgba(7,26,46,0.92)' : 'rgba(250,250,248,0.92)',
+            backdropFilter: 'blur(12px)',
+            border: isDark ? '1px solid rgba(255,255,255,0.09)' : '1px solid rgba(0,0,0,0.10)',
+            borderRight: 'none',
+            boxShadow: isDark ? '-4px 0 16px rgba(0,0,0,0.3)' : '-4px 0 16px rgba(0,0,0,0.07)',
+            color: isDark ? 'rgba(255,255,255,0.45)' : 'rgba(17,17,17,0.55)',
+          }}
+          whileHover={{ x: -4 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <motion.span
+            key={theme}
+            initial={{ rotate: -30, opacity: 0 }}
+            animate={{ rotate: 0, opacity: 1 }}
+            transition={{ duration: 0.25 }}
+          >
+            {isDark ? <SunIcon /> : <MoonIcon />}
+          </motion.span>
+        </motion.button>
+      </div>
+
       {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
@@ -219,30 +222,15 @@ export default function Navbar() {
                 {link.label}
               </motion.a>
             ))}
-            <motion.button
-              onClick={toggleTheme}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300"
-              style={{
-                background: isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.05)',
-                border: isDark ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(0,0,0,0.10)',
-                color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(17,17,17,0.55)',
-              }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.28 }}
-            >
-              {isDark ? <SunIcon /> : <MoonIcon />}
-              <span>Switch to {isDark ? 'Light' : 'Dark'} mode</span>
-            </motion.button>
             <motion.a
-              href="#cta"
+              href="/signin"
               className="btn-primary text-base font-medium text-white px-8 py-3.5 mt-2"
               onClick={() => setMenuOpen(false)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.38 }}
             >
-              Get Early Access
+              Sign in
             </motion.a>
           </motion.div>
         )}
