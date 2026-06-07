@@ -86,9 +86,9 @@ const features = [
   {
     number: '01',
     Icon: IconTarget,
-    title: 'Lead Generation Specialists',
+    title: 'One Focus. Done Right.',
     description:
-      'Unlike full-service agencies that offer everything, we focus on lead generation and business growth. Every strategy is built around helping you create more opportunities.',
+      'Unlike full-service agencies spread thin across 20 services, every hour we work is dedicated to one outcome — filling your pipeline with qualified leads.',
     color: '#00C853',
   },
   {
@@ -96,23 +96,23 @@ const features = [
     Icon: IconFounder,
     title: 'Founder-Led Execution',
     description:
-      'Work directly with the person building and managing your lead generation system. No account managers. No communication gaps.',
+      'Work directly with the person building and running your campaigns. No account managers, no handoffs, no communication gaps.',
     color: '#5EF38C',
   },
   {
     number: '03',
     Icon: IconMessage,
-    title: 'Personalized Outreach',
+    title: 'No Lock-In Contracts',
     description:
-      "We don't rely on generic templates. Every campaign is tailored to your audience, industry, and business goals.",
+      "We work on flexible, month-to-month terms. You stay because results keep coming — not because you're trapped in a 6-month retainer.",
     color: '#00C853',
   },
   {
     number: '04',
     Icon: IconGrowth,
-    title: 'Built For Growing Businesses',
+    title: 'Scales With Your Business',
     description:
-      "Whether you're a startup, service provider, agency, or established business, our systems are designed to help you scale consistently.",
+      'Need 10 meetings a month or 100? Our systems adapt to match your targets and capacity as your business grows.',
     color: '#5EF38C',
   },
   {
@@ -120,15 +120,15 @@ const features = [
     Icon: IconLightning,
     title: 'Fast & Agile',
     description:
-      'Without layers of approvals and bureaucracy, we can adapt quickly, test new approaches, and optimize campaigns faster.',
+      'No lengthy onboarding or layers of approvals. We move fast, test quickly, and optimize campaigns in days — not quarters.',
     color: '#00C853',
   },
   {
     number: '06',
     Icon: IconChart,
-    title: 'Focused On Results',
+    title: 'Results You Can Measure',
     description:
-      'We measure success by conversations started, opportunities created, and business growth — not vanity metrics.',
+      'No confusing dashboards or inflated metrics. We track conversations started, meetings booked, and revenue opportunities created — nothing else.',
     color: '#5EF38C',
   },
 ]
@@ -244,9 +244,8 @@ export default function WhyUsSection() {
             <span className="text-gradient">Lur AI</span>
           </h2>
           <p className="font-sans text-base md:text-lg text-white/40 max-w-2xl mx-auto leading-relaxed">
-            We&apos;re not a traditional marketing agency. We focus on one thing — helping businesses
-            generate more qualified leads and sales opportunities through proven systems and
-            personalized execution.
+            We&apos;re built differently from the start. Here&apos;s what makes working with Lur AI
+            a better experience than a traditional agency — from the first call to the last report.
           </p>
         </div>
 
