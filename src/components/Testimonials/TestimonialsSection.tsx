@@ -60,33 +60,28 @@ function IconGrowth({ color }: { color: string }) {
 
 const featured = {
   quote:
-    'Lur AI helped us rethink how we approach lead generation. Instead of relying entirely on referrals, we now have a more structured process for reaching potential customers and creating new opportunities.',
-  name: 'Client Name',
-  title: 'Business Owner',
-  initials: 'CN',
+    'Before Lur AI, Btown Auto Sales ran almost entirely on walk-ins and word-of-mouth — great until you need predictable growth. Raj personally built a structured outreach system designed around how car buyers in Mississauga actually make decisions. Within weeks we were having real conversations with qualified prospects we\'d never have reached on our own. What set this apart was that Raj was in it personally — nothing got handed off, every adjustment was fast, and every strategy was built specifically for Btown.',
+  name: 'Bhawan Singh',
+  title: 'CEO, Btown Auto Sales · Mississauga, ON',
+  initials: 'BS',
 }
 
 const cards = [
   {
     quote:
-      'The communication was clear, the process was simple, and the focus was always on generating real business opportunities.',
-    title: 'Business Founder',
-    initials: 'BF',
+      'Most agencies don\'t understand how an architecture firm actually wins work. Raj took the time to learn how Tad Architects operates before building anything. The system he created opened conversations with developers and real estate clients we hadn\'t been reaching — and because the founder was personally driving it, every refinement was sharp and intentional.',
+    name: 'Ar. Rajavelu',
+    title: 'Founder, Tad Architects · Chennai, India',
+    initials: 'AR',
     color: '#00C853',
   },
   {
     quote:
-      'What stood out most was the personalized approach. Every recommendation was tailored to our business instead of using a one-size-fits-all strategy.',
-    title: 'Managing Director',
-    initials: 'MD',
+      'Act360 had solid clients but they all came through referrals — unpredictable and impossible to scale deliberately. Raj built us a proactive outreach process that started real conversations with businesses in markets we weren\'t even targeting before. Having the founder personally run the strategy meant every pivot was instant and on-point.',
+    name: 'David Bowels',
+    title: 'Founder, Act360 · Barrie, ON',
+    initials: 'DB',
     color: '#5EF38C',
-  },
-  {
-    quote:
-      'Working directly with the founder made a huge difference. We always knew what was happening and what the next steps were.',
-    title: 'Business Owner',
-    initials: 'BO',
-    color: '#00C853',
   },
 ]
 
@@ -263,7 +258,7 @@ export default function TestimonialsSection() {
               </blockquote>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 flex-wrap">
                 <Avatar initials={featured.initials} size="lg" />
                 <div>
                   <div className="font-display font-bold text-base text-white leading-tight">
@@ -292,7 +287,7 @@ export default function TestimonialsSection() {
         </motion.div>
 
         {/* ── 3-card grid ──────────────────────────────────────── */}
-        <div className="tm-grid grid grid-cols-1 md:grid-cols-3 gap-4 mb-24 md:mb-32">
+        <div className="tm-grid grid grid-cols-1 md:grid-cols-2 gap-4 mb-24 md:mb-32">
           {cards.map((card, i) => (
             <motion.div
               key={i}
@@ -320,7 +315,8 @@ export default function TestimonialsSection() {
                 <div className="flex items-center gap-3 pt-4 border-t" style={{ borderColor: 'var(--divider)' }}>
                   <Avatar initials={card.initials} size="sm" />
                   <div>
-                    <div className="font-sans text-xs text-white/38">{card.title}</div>
+                    <div className="font-sans text-[13px] font-semibold text-white/80 leading-tight">{card.name}</div>
+                    <div className="font-sans text-xs text-white/38 mt-0.5">{card.title}</div>
                     <div
                       className="flex items-center gap-1 mt-0.5"
                     >
